@@ -10,6 +10,6 @@ def solution(participant, completion):
         
     participant_counter = collections.Counter(participant);
     completion_counter = collections.Counter(completion);
-    c = participant_counter - completion_counter;    
+    diff = participant_counter - completion_counter;    
     
-    return list(c)[0]
+    return list(diff)[0]
