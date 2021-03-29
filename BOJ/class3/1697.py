@@ -1,9 +1,11 @@
 import sys;
-from collections import deque;
-LIMIT = 100001
+import collections;
+su, sis = map(int, sys.stdin.readline().split());
+que = collections.deque();
 
-def bfs(time, su, sis):
-    que = deque();
+def bfs():
+    global su, sis, time, MAX;
+    que = collections.deque();
     que.append(su);
 
     while que:
@@ -11,11 +13,11 @@ def bfs(time, su, sis):
         if target == sis:
             print(time[target]);
             return;
-        for next_step in [target - 1, target + 1, target * 2]:
-            if time[next_step] == 0 and (0 <= next_step < LIMIT):
-                time[next_step] = time[target] + 1;
-                que.append(next_step);
+        for i in [target - 1, target + 1, target * 2]:
+            if 0 <= i < MAX and time[i] == 0:
+                time[i] = time[target] + 1;
+                que.append(i);
 
-su, sis = map(int, sys.stdin.readline().split());
-time = [0] * LIMIT;
-bfs(time, su, sis);
+MAX = 100001
+time = [0] * MAX;
+bfs();
