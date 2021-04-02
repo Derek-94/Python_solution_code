@@ -10,7 +10,6 @@ for _ in range(cal_cnt):
     if len(command) == 1:
         if command[0] == "all":
             S = {i + 1 for i in range(20)}
-            print(S)
         else:
             S = set();
     else:
