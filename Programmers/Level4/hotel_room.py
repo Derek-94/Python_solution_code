@@ -1,15 +1,13 @@
 def solution(k, room_number):
+    room_dic = {}
     ret = []
-    rooms = dict()
-
     for i in room_number:
-        reserve = i
-        while True:
-            if reserve in rooms:
-                reserve += 1
-            else:
-                rooms[reserve] = 1
-                ret.append(reserve)
-                break
-
+        n = i
+        visit = [n]
+        while n in room_dic:
+            n = room_dic[n]
+            visit.append(n)
+        ret.append(n)
+        for j in visit:
+            room_dic[j] = n+1
     return ret
