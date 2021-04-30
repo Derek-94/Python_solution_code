@@ -4,7 +4,6 @@ def solution(stones, k):
     min_friend = 1;
     max_friend = 200000000;
     
-    
     while min_friend <= max_friend:
         candidate = (min_friend + max_friend) // 2;
         
