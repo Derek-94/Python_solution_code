@@ -50,3 +50,5 @@ function solution(s) {
     
     return answer;
 }
+
+solution("(()))")
