@@ -28,3 +28,22 @@ def solution(numbers):
         answer.append(result);
     
     return answer
+
+def solution_revised(numbers):
+    answer = []
+    for num in numbers:
+        if num % 2 == 0:
+            answer.append(num + 1)
+        else:
+            n1 = str(format(num, 'b'))
+            n1 = '0' + n1
+            n1 = list(n1)
+            for i in range(len(n1)-1, -1, -1):
+                if n1[i] == '0':
+                    n1[i] = '1'
+                    n1[i+1] = '0'
+                    break
+            n2 = "".join(n1)
+            n2 = int(n2, 2)
+            answer.append(n2)
+    return answer
