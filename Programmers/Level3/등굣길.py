@@ -27,3 +27,19 @@ def solution(m, n, puddles):
     print(road)
     
     return road[n - 1][m - 1] % 1000000007
+
+def solution(m, n, puddles):
+    for i in puddles:
+        i[0] -= 1;
+        i[1] -= 1;
+    road = [[0] * m for i in range(n)];
+    road[0][0] = 1;
+    for y in range(n):
+        for x in range(m):
+            if y == 0 and x == 0: continue;
+            if [x, y] in puddles:
+                road[y][x] = 0;
+            else:
+                road[y][x] = road[y - 1][x] + road[y][x - 1];
+    print(road)
+    return road[n - 1][m - 1] % 1000000007
