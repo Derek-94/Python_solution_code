@@ -12,7 +12,7 @@ def recursiveBFS(v, visited=[]):
     visited.append(v);
     for w in graph[v]:
         if w not in visited:
-            visited = recursive_dfs(w, visited);
+            visited = recursiveBFS(w, visited);
 
     return visited;
 
