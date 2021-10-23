@@ -23,7 +23,6 @@ def BFS(y, x, place, visited):
 
 def solution(places):
     answer = [];
-    p_cnt = [];
         
     for i, place in enumerate(places):
         stop = False;
